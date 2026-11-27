@@ -1,0 +1,32 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+# Trust X-Forwarded-For and X-Forwarded-Proto headers from reverse proxy (Caddy / Nginx)
+server:
+  forward-headers-strategy: framework
+
+# / production trace sampling is 10% by default.
+management:
+  tracing:
+    sampling:
+      probability: ${DISPATCHX_TRACE_SAMPLING:0.1}
+
+dispatchx:
+  demo:
+    public: false
+    webhook-url: ""
+  webhook:
+    demo-allowlist: ""
+  retry:
+    base-delay: 30s
+    max-delay: 15m
+  worker:
+    email:
+      enabled: ${DISPATCHX_WORKER_EMAIL_ENABLED:true}
+    webhook:
+      enabled: ${DISPATCHX_WORKER_WEBHOOK_ENABLED:true}
+    inapp:
+      enabled: ${DISPATCHX_WORKER_INAPP_ENABLED:true}
+

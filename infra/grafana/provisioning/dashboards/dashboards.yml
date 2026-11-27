@@ -1,0 +1,13 @@
+# / load provisioned dashboards from disk.
+apiVersion: 1
+
+providers:
+  - name: dispatchx
+    orgId: 1
+    folder: DispatchX
+    type: file
+    disableDeletion: false
+    editable: false
+    options:
+      path: /etc/grafana/dashboards
+      foldersFromFilesStructure: false
