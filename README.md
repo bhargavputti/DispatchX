@@ -51,7 +51,7 @@ Modern web platforms (e-commerce checkout, ride-sharing booking, fintech transac
 DispatchX solves this by decoupling notification ingestion from delivery. Upstream microservices hand off notifications via a secured REST API with immediate **HTTP 202 Accepted** responses in under **15 milliseconds**. The platform atomically persists notification state and outbox events in **PostgreSQL** using the **Transactional Outbox Pattern**, dispatches messages in strict per-tenant order across partitioned **Apache Kafka** topics, and delivers them through isolated channel workers fortified with **Circuit Breakers**, **Bulkheads**, **Token-Bucket Rate Limiters**, and **Dead-Letter Queue (DLQ) Workbenches**.
 
 <p align="center">
-  <img src="./docs/images/01-landing-hero.png" alt="DispatchX Platform Hero" width="90%" />
+  <img src="./assets/screenshots/01-landing-hero.png" alt="DispatchX Platform Hero" width="90%" />
 </p>
 
 ---
@@ -105,51 +105,51 @@ The platform architecture flow and live hero interface demonstrating real-time i
 
 | System Architecture Flow | Platform Hero Interface |
 | :---: | :---: |
-| <img src="./docs/images/00-architecture-flow.png" alt="Architecture Flow" width="100%" /> | <img src="./docs/images/01-landing-hero.png" alt="Landing Hero" width="100%" /> |
+| <img src="./assets/screenshots/00-architecture-flow.png" alt="Architecture Flow" width="100%" /> | <img src="./assets/screenshots/01-landing-hero.png" alt="Landing Hero" width="100%" /> |
 
 ### 2. Multi-Channel Delivery Proof
 Real-time delivery verification across Email (Resend DKIM/SPF), Webhook (HMAC-SHA256 signature verification), and In-App (SSE client).
 
 | Email Delivery Verification | Webhook Signature Verification | In-App Real-Time Feed |
 | :---: | :---: | :---: |
-| <img src="./docs/images/channel-verify-email.png" alt="Email Delivery" width="100%" /> | <img src="./docs/images/channel-verify-webhook.png" alt="Webhook Delivery" width="100%" /> | <img src="./docs/images/channel-verify-inapp.png" alt="In-App Delivery" width="100%" /> |
+| <img src="./assets/screenshots/channel-verify-email.png" alt="Email Delivery" width="100%" /> | <img src="./assets/screenshots/channel-verify-webhook.png" alt="Webhook Delivery" width="100%" /> | <img src="./assets/screenshots/channel-verify-inapp.png" alt="In-App Delivery" width="100%" /> |
 
 ### 3. Tenant Management Console
 Tenants can inspect notification lifecycle timelines, manage reusable Mustache templates, provision API keys, and test live webhooks.
 
 | Live Demo Inbox | Tenant Dashboard & Analytics |
 | :---: | :---: |
-| <img src="./docs/images/02-demo-inbox.png" alt="Demo Inbox" width="100%" /> | <img src="./docs/images/03-tenant-dashboard.png" alt="Tenant Dashboard" width="100%" /> |
+| <img src="./assets/screenshots/02-demo-inbox.png" alt="Demo Inbox" width="100%" /> | <img src="./assets/screenshots/03-tenant-dashboard.png" alt="Tenant Dashboard" width="100%" /> |
 
 | Notifications Explorer & Timeline | Dynamic Template Designer | API Key Lifecycle & Rotation |
 | :---: | :---: | :---: |
-| <img src="./docs/images/04-notifications-explorer.png" alt="Notifications Explorer" width="100%" /> | <img src="./docs/images/05-templates-manager.png" alt="Template Designer" width="100%" /> | <img src="./docs/images/06-api-keys-management.png" alt="API Keys" width="100%" /> |
+| <img src="./assets/screenshots/04-notifications-explorer.png" alt="Notifications Explorer" width="100%" /> | <img src="./assets/screenshots/05-templates-manager.png" alt="Template Designer" width="100%" /> | <img src="./assets/screenshots/06-api-keys-management.png" alt="API Keys" width="100%" /> |
 
 ### 4. Platform Administration & DLQ Workbench
 Platform operators monitor tenant health, review circuit breaker states, audit logs, and replay or discard dead-lettered notifications.
 
 | Operator Overview & Status | System Health & Breakers | DLQ Replay Workbench |
 | :---: | :---: | :---: |
-| <img src="./docs/images/07-admin-overview.png" alt="Admin Overview" width="100%" /> | <img src="./docs/images/08-admin-system-health.png" alt="System Health" width="100%" /> | <img src="./docs/images/09-admin-dlq-workbench.png" alt="DLQ Workbench" width="100%" /> |
+| <img src="./assets/screenshots/07-admin-overview.png" alt="Admin Overview" width="100%" /> | <img src="./assets/screenshots/08-admin-system-health.png" alt="System Health" width="100%" /> | <img src="./assets/screenshots/09-admin-dlq-workbench.png" alt="DLQ Workbench" width="100%" /> |
 
 ### 5. Grafana Observability Suite & k6 Benchmark
 Full-stack production telemetry powered by Prometheus, Loki, Tempo, and OpenTelemetry.
 
 | Operations Overview Dashboard | Delivery Latency & Percentiles |
 | :---: | :---: |
-| <img src="./docs/images/10-grafana-overview.png" alt="Grafana Overview" width="100%" /> | <img src="./docs/images/11-grafana-delivery.png" alt="Delivery Metrics" width="100%" /> |
+| <img src="./assets/screenshots/10-grafana-overview.png" alt="Grafana Overview" width="100%" /> | <img src="./assets/screenshots/11-grafana-delivery.png" alt="Delivery Metrics" width="100%" /> |
 
 | System Health & Rate Limits | Kafka Transport & Queue Depths |
 | :---: | :---: |
-| <img src="./docs/images/12-grafana-system-health.png" alt="System Health" width="100%" /> | <img src="./docs/images/13-grafana-kafka-transport.png" alt="Kafka Transport" width="100%" /> |
+| <img src="./assets/screenshots/12-grafana-system-health.png" alt="System Health" width="100%" /> | <img src="./assets/screenshots/13-grafana-kafka-transport.png" alt="Kafka Transport" width="100%" /> |
 
 | Loki Structured ECS Logs | Tempo Distributed Trace Waterfall |
 | :---: | :---: |
-| <img src="./docs/images/14-loki-structured-logs.png" alt="Loki Logs" width="100%" /> | <img src="./docs/images/15-tempo-distributed-trace.png" alt="Tempo Trace" width="100%" /> |
+| <img src="./assets/screenshots/14-loki-structured-logs.png" alt="Loki Logs" width="100%" /> | <img src="./assets/screenshots/15-tempo-distributed-trace.png" alt="Tempo Trace" width="100%" /> |
 
 | Admin Telemetry Console | k6 Ingress Load Benchmark |
 | :---: | :---: |
-| <img src="./docs/images/16-admin-telemetry-console.png" alt="Telemetry Console" width="100%" /> | <img src="./docs/images/17-k6-load-benchmark.png" alt="k6 Load Benchmark" width="100%" /> |
+| <img src="./assets/screenshots/16-admin-telemetry-console.png" alt="Telemetry Console" width="100%" /> | <img src="./assets/screenshots/17-k6-load-benchmark.png" alt="k6 Load Benchmark" width="100%" /> |
 
 ---
 
